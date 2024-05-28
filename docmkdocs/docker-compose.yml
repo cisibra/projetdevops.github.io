@@ -1,0 +1,18 @@
+services:
+   Mkdocs:
+       build: .
+       image: cisseibrahim/imageforkdocs:2.0.2
+       container_name: mkdocs.webapp
+       volumes:
+         - ./site:/var/www/html
+       networks:
+         default:
+         proxy-net:
+           ipv4_address: 172.20.0.30
+
+networks:
+  default:
+    name: mkdoc-net
+  proxy-net:
+    external: true
+

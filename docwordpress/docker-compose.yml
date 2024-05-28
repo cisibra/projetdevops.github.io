@@ -1,0 +1,21 @@
+services:
+  wordpress:
+    build: .
+    image: cisseibrahim/wordpress-site:0.0.1
+    container_name: wordpress.webapp
+    volumes:
+      - ./wordpress-site:/var/www/html
+    networks:
+      default:
+      proxy-net:
+       ipv4_address: 172.20.0.40
+
+networks:
+  default:
+    name: wordpress-net
+  proxy-net:
+    external: true
+
+volumes:
+  db_data:
+

@@ -1,0 +1,7 @@
+FROM wordpress:latest 
+LABEL maintainer="Cisse Ibrahim"
+LABEL description="Application WordPress avec configurations personnalisées du Group6." 
+LABEL member="Thierno Mamadou Dian DIALLO"
+LABEL member="Ibrahim CISSE"
+LABEL member="SEKOUBA KOUROUMA"
+LABEL member="ALSENY CAMARA"

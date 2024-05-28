@@ -1,0 +1,8 @@
+FROM ubuntu/apache2:2.4-20.04_beta
+LABEL author="GROUP6"
+LABEL member="Thierno Mamadou Dian DIALLO"
+LABEL member="Ibrahima CISSE"
+LABEL member="SEKOUBA KOUROUMA"
+LABEL member="ALSENY CAMARA"
+
+

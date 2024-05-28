@@ -1,0 +1,22 @@
+# Utilisation d'une image Python légère comme base
+FROM python:3.12.3-alpine
+LABEL Role=mkdocs-site
+        
+LABEL Server=python-server
+        
+ENV MKDOCS_APP=deploy
+# Installion MkDocs et le thème Material pour MkDocs
+RUN pip3 install mkdocs 
+
+# Définition du répertoire de travail
+WORKDIR /docs
+
+# Copie des fichiers de documentation dans le conteneur
+COPY . .
+
+# Exposer le port sur lequel l'application va tourner
+EXPOSE 8000
+
+# Commande pour servir la documentation MkDocs
+CMD ["mkdocs", "serve", "--dev-addr=0.0.0.0:8000"]
+

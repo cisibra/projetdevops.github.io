@@ -1,0 +1,23 @@
+services:
+  proxy:
+    build: proxydir
+    image: cisseibrahim/proxy-apache2:2.4-20.04_beta
+    volumes:
+      - ./proxydir:/srv/www
+      - ./apache2.conf:/etc/apache2/apache2.conf
+    networks:
+      default:
+        ipv4_address: 172.20.0.19
+    ports:
+      - 80:80
+
+networks:
+  default:
+    name: proxy-net
+    driver: bridge
+    external: false
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+          gateway: 172.20.0.1
+

@@ -1,0 +1,17 @@
+services:
+  SiteMembre:
+    build: .
+    image: cisseibrahim/lesite:0.0.1
+    container_name: lesite.webapp
+    volumes:
+      - ./lesite:/var/www/html
+    networks:
+      default:
+      proxy-net:
+       ipv4_address: 172.20.0.21
+networks:
+  default:
+    name: lesite-net
+  proxy-net:
+    external: true
+
